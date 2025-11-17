@@ -19,10 +19,9 @@ export default function AdBanner({ className = '' }: { className?: string }) {
         if (script && containerRef.current) {
           // Check if script has loaded
           const isScriptLoaded = script.getAttribute('data-loaded') === 'true' || 
-                                 (script as HTMLScriptElement).readyState === 'complete' ||
-                                 (script as HTMLScriptElement).readyState === 'loaded';
+                                 (window as any).atAsyncOptions;
           
-          if (isScriptLoaded || (window as any).atAsyncOptions) {
+          if (isScriptLoaded) {
             // Script is loaded, Adsterra should populate containers
             // Force a refresh to ensure all containers are found
             if ((window as any).atAsync && typeof (window as any).atAsync === 'function') {
@@ -54,8 +53,8 @@ export default function AdBanner({ className = '' }: { className?: string }) {
           initAd();
         };
         
-        if ((script as HTMLScriptElement).readyState === 'complete' || 
-            (script as HTMLScriptElement).readyState === 'loaded') {
+        // Check if script is already loaded by checking for Adsterra global
+        if ((window as any).atAsyncOptions) {
           handleLoad();
         } else {
           script.addEventListener('load', handleLoad);
