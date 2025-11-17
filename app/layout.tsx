@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
@@ -33,6 +34,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          id="adsterra-script"
+          strategy="afterInteractive"
+          async
+          data-cfasync="false"
+          src="//pl28075472.effectivegatecpm.com/164e02aec13939cc8449dfef5bd4510d/invoke.js"
+        />
         <Header />
         <main className="min-h-screen">
           {children}
