@@ -95,11 +95,30 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
-                  {categoryTools.map((tool, index) => (
-                    <div key={tool.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.05}s` }}>
-                      <ToolCard tool={tool} />
-                    </div>
-                  ))}
+                  {categoryTools.flatMap((tool, index) => {
+                    const items = [];
+                    
+                    // Add the tool card
+                    items.push(
+                      <div key={tool.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.05}s` }}>
+                        <ToolCard tool={tool} />
+                      </div>
+                    );
+                    
+                    // Add an ad after every 4 tools (every 2 rows in 2-column grid)
+                    if ((index + 1) % 4 === 0 && index < categoryTools.length - 1) {
+                      items.push(
+                        <div key={`ad-${index}`} className="col-span-1 sm:col-span-2 lg:col-span-2">
+                          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                            <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                            <AdBanner />
+                          </div>
+                        </div>
+                      );
+                    }
+                    
+                    return items;
+                  })}
                 </div>
               </>
             ) : (

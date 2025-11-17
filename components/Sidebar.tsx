@@ -15,6 +15,18 @@ export default function Sidebar() {
           <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
           <AdBanner />
         </div>
+
+        {/* Ad Banner 3 */}
+        <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+          <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+          <AdBanner />
+        </div>
+
+        {/* Ad Banner 4 */}
+        <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+          <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+          <AdBanner />
+        </div>
       </div>
     </aside>
   );
