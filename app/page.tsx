@@ -3,6 +3,7 @@ import { categories } from '../data/categories';
 import { tools } from '../data/tools';
 import CategoryCard from '../components/CategoryCard';
 import ToolCard from '../components/ToolCard';
+import AdBanner from '../components/AdBanner';
 
 export default function Home() {
   const featuredTools = tools.filter(tool => tool.featured).slice(0, 6);
@@ -46,6 +47,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad Banner - After Hero */}
+      <section className="py-8 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+            <AdBanner />
+          </div>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section className="py-20 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,6 +74,16 @@ export default function Home() {
                 <CategoryCard category={category} />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ad Banner - Between Categories and Featured Tools */}
+      <section className="py-8 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+            <AdBanner />
           </div>
         </div>
       </section>
@@ -95,6 +116,16 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Ad Banner - After Featured Tools */}
+      <section className="py-8 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg border border-gray-200 bg-white p-4">
+            <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+            <AdBanner />
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { tools } from '../../../data/tools';
 import { categories } from '../../../data/categories';
 import Sidebar from '../../../components/Sidebar';
+import AdBanner from '../../../components/AdBanner';
 
 interface ToolPageProps {
   params: {
@@ -156,6 +157,14 @@ export default async function ToolPage({ params }: ToolPageProps) {
               </div>
             </div>
 
+            {/* Ad Banner - After Tool Header */}
+            <div className="mb-8">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
+            </div>
+
             {/* Pricing Section */}
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-8 mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -193,6 +202,14 @@ export default async function ToolPage({ params }: ToolPageProps) {
               </div>
             </div>
 
+            {/* Ad Banner - After Pricing */}
+            <div className="mb-8">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
+            </div>
+
             {/* Features Section */}
             <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-8 mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -218,6 +235,14 @@ export default async function ToolPage({ params }: ToolPageProps) {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Ad Banner - After Features */}
+            <div className="mb-8">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
             </div>
 
             {/* Pros and Cons */}

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { tools } from '../../data/tools';
 import ToolCard from '../../components/ToolCard';
 import Sidebar from '../../components/Sidebar';
+import AdBanner from '../../components/AdBanner';
 
 export const metadata: Metadata = {
   title: 'Top AI Tools Lists - Best Rated Tools by Category',
@@ -39,6 +40,14 @@ export default function TopListsPage() {
               </p>
             </div>
 
+            {/* Ad Banner - After Header */}
+            <div className="mb-12">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
+            </div>
+
             {/* Top Writing Tools */}
             <section className="mb-16">
               <div className="flex items-center justify-between mb-8">
@@ -70,6 +79,14 @@ export default function TopListsPage() {
               </div>
             </section>
 
+            {/* Ad Banner - Between Sections */}
+            <div className="mb-12">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
+            </div>
+
             {/* Top Coding Tools */}
             <section className="mb-16">
               <div className="flex items-center justify-between mb-8">
@@ -100,6 +117,14 @@ export default function TopListsPage() {
                 ))}
               </div>
             </section>
+
+            {/* Ad Banner - Between Sections */}
+            <div className="mb-12">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
+            </div>
 
             {/* Top Image Generation Tools */}
             <section className="mb-16">

@@ -5,6 +5,7 @@ import { categories } from '../../../data/categories';
 import { tools } from '../../../data/tools';
 import ToolCard from '../../../components/ToolCard';
 import Sidebar from '../../../components/Sidebar';
+import AdBanner from '../../../components/AdBanner';
 
 interface CategoryPageProps {
   params: {
@@ -75,6 +76,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <p className="text-lg text-gray-700 max-w-3xl leading-relaxed">
                 {category.description}
               </p>
+            </div>
+
+            {/* Ad Banner - After Category Header */}
+            <div className="mb-8">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
             </div>
 
             {/* Tools Grid */}

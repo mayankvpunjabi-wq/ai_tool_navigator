@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { categories } from '../../data/categories';
 import CategoryCard from '../../components/CategoryCard';
+import AdBanner from '../../components/AdBanner';
 
 export const metadata: Metadata = {
   title: 'All Categories - AI Tool Navigator',
@@ -19,6 +20,15 @@ export default function CategoriesPage() {
             Browse AI tools by category to find the perfect solution for your needs
           </p>
         </div>
+        
+        {/* Ad Banner - After Header */}
+        <div className="mb-12">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+            <AdBanner />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((category, index) => (
             <div key={category.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.05}s` }}>

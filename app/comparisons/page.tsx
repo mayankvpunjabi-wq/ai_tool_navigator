@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { tools } from '../../data/tools';
 import Sidebar from '../../components/Sidebar';
+import AdBanner from '../../components/AdBanner';
 
 export const metadata: Metadata = {
   title: 'AI Tool Comparisons - Side-by-Side Tool Reviews',
@@ -25,6 +26,14 @@ export default function ComparisonsPage() {
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Side-by-side comparisons to help you choose the best AI tool for your needs
               </p>
+            </div>
+
+            {/* Ad Banner - After Header */}
+            <div className="mb-12">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
             </div>
 
             {chatGPT && claude && (
@@ -164,6 +173,14 @@ export default function ComparisonsPage() {
                 </div>
               </div>
             )}
+
+            {/* Ad Banner - Before Coming Soon Section */}
+            <div className="mb-8">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <div className="text-xs text-gray-500 mb-2 text-center">Advertisement</div>
+                <AdBanner />
+              </div>
+            </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-10 text-center shadow-sm">
               <div className="text-5xl mb-4">🚀</div>
